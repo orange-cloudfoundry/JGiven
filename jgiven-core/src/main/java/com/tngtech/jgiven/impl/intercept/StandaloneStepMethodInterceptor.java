@@ -2,8 +2,8 @@ package com.tngtech.jgiven.impl.intercept;
 
 import java.lang.reflect.Method;
 
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
+import com.tngtech.jgiven.relocated.cglib.proxy.MethodInterceptor;
+import com.tngtech.jgiven.relocated.cglib.proxy.MethodProxy;
 
 /**
  * StepMethodInterceptor that uses cglib {@link MethodInterceptor} for intercepting JGiven methods

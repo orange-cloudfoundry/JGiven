@@ -1,8 +1,8 @@
 package com.tngtech.jgiven.gradle;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.Files;
-import com.google.common.io.Resources;
+import com.tngtech.jgiven.relocated.guava.base.Charsets;
+import com.tngtech.jgiven.relocated.guava.io.Files;
+import com.tngtech.jgiven.relocated.guava.io.Resources;
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.BeforeStage;
 import com.tngtech.jgiven.annotation.ExpectedScenarioState;
@@ -204,7 +204,7 @@ public class JGivenPluginTest extends ScenarioTest<JGivenPluginTest.Given, JGive
         @ProvidedScenarioState
         private BuildResult result;
         @ProvidedScenarioState
-        List<String> tasks = new ArrayList<>();
+        List<String> tasks = new ArrayList<String>();
 
         public When the_task( @Quoted String task ) {
             tasks.add( task );
