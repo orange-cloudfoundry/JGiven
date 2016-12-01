@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.tngtech.jgiven.annotation.NestedSteps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -45,5 +46,11 @@ public class HelloStage extends Stage<HelloStage> {
     public HelloStage the_content_is( @Quoted String content ) throws Exception {
         mvcResult.andExpect( content().string( equalTo( content ) ) );
         return this;
+    }
+
+    @NestedSteps
+    public HelloStage I_should_get_home_page() throws Exception {
+        return the_status_is( HttpStatus.OK )
+                .and().the_content_is( "Greetings from JGiven!" );
     }
 }
